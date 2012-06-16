@@ -1,0 +1,40 @@
+Sword.io
+
+# Console Adventure
+
+Sword.io is a console adventure game that takes place in the Medieval World of Arcania. The player chooses between two character Classes Warrior or Sorcerous and ventures from his or her village of Urselan through Bogs, plains, villages, forests, to confront an ancient evil that is threatening to destroy Arcania. During the adventure the player's characater learns powerful spells and defeats vicious enemies and powerful bosses to learn the truth behind the presence that threatens his or her very existence.
+
+## How to play
+
+Download or fork Sword.io and cd ~ into the game's directory in terminal. Then type 'ruby start.rb' and that's it. See recommendations on Ruby version below.
+
+## Modular
+
+Storyline, data, classes, and status are split into their relative folders making it easy to collaborate and change the storyline. People with very little to programming experience can adapt or rewrite the game's storyline to tell powerful and moving tales that rely on the fundamental battle programming logic that has already been written. The game's storyline is kept in storyline/storyline and character data (e.g monster and boss names and descriptions) is in data/data. 
+
+## Fundamentals
+
+If you desire to contribute to the game programattically – great. There are probably lots of things that could make Sword.io even better, like inventory, earning items, player to player battles, web, iOS, Windows executable versions, and more. If you are contributting programatically I ask that you :
+1. Fork the project.
+2. Make your feature addition or bug fix.
+3. Add tests for it. This is important so I don't break it in a future version unintentionally.
+4. Commit. If you want to have your own version that is fine but bump your version in a commit by itself that I can ignore when I pull.
+5. Send me a pull request. Bonus poitns for topic branches.
+
+## Ruby 1.9.3p194
+
+Sword.io is written in Ruby 1.9.3p194. It is recommended if contributing to use Ruby 1.9+ minimum as references such as require_relative will not work in previous versions of Ruby.
+
+## Application Structure
+
+Start.rb                                # root. It links to all other files in the game. This is a list of those files:
+require_relative 'status/status'		# counters that determine level, place, abilities
+require_relative 'data/data'			# constants that determine places, enemies, abilities
+require_relative 'storyline/storyline'	# ongoing storyline relative to monsters killed
+require_relative 'classes/attributes'	# enemy, boss, character logic
+require_relative 'classes/character'	# battle, spell, character logic
+
+
+## License
+
+Sword.io is released under the MIT License.  © 2012 Verdi Ergun, http://www.verdiergun.com/
