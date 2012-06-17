@@ -87,21 +87,17 @@ module Storyline
             puts "Dwarzengorf:  What brings you back to the Forest?"
             puts "#{self.name}: ..."
             pause
-            puts "#{self.name}: What's possessing these creatures?"
+            puts "#{self.name}: What has possessed these creatures?"
             pause
             puts "Dwarzengorf: I've been wondering that myself."
-            puts "Dwarzengorf: There is an elder in Darcanthus who is known as Azgard."
-            pause
-            puts "Dwarzengorf: Check your map in battle to see the trail ahead."
+            puts "Dwarzengorf: I've never had an issue with an Alkazar or Gorgon before."
+            puts "Dwarzengorf: There is an elder in the City of Darcanthus who is known as Azgard."
             pause
             puts "Dwarzengorf: This elder is rumored to have a great power."
-            puts "Dwarzengorf: The power to see the future."
+            puts "Dwarzengorf: The power to see into the future."
             pause
-            puts "#{self.name}: I'll visit Darcanthus and the elder."
-            puts "Dwarzengorf: Careful.. there is something you should know."
-			pause
+            puts "Dwarzengorf: There is something you should know."
 			puts "Dwarzengorf: Elders are wise, but they can speak in riddles and lead those who listen mad."
-            pause
             puts "Dwarzengorf: Maybe I can help. Take this and put it to good use."
             pause
             self.current_gold += 100
@@ -110,47 +106,70 @@ module Storyline
             puts "Dwarzengorf: Another monster is coming. I'm headed back to the village."
             puts "Dwarzengorf: Good luck!"
             pause
-            puts "Dwarzengorf: Oh one more thing. Beware the Rankadon in these parts."
-            pause
-            puts "Dwarzengorf: It is a large rock monster that is possessed by evil."
-            pause
-            puts "Dwarzengorf leaves."
-            pause
             puts "A monster comes closer."
 			end
 			def storyline_four
-			puts "#{self.name}: I have to get to Darcanthus and find the elder Azgard."
-			puts "Fire Fairie: Let's go."
+			puts "#{self.name}: I should travel to Darcanthus and engage the elder."
+			puts "Fire Fairie: I'm going with you!"
 			pause
+			puts "#{self.name}: Let's go then."
 			puts "A monster comes closer."
 			end
 			def storyline_five
+			puts "#{self.name}: I would like to know how the five fairies were captured."
+			puts "Fire Fairie: We weren't captured. The creatures we protect were captured."
+			pause
+			puts "#{self.name}: What do you mean?"
+			puts "Fire Fairie: We share a life force with Arcania's creatures."
+			puts "Fire Fairie: We are dispersed randomly to a creature and live with it until it dies."
+			pause
+			puts "Fire Fairie: The creatures we live with are not dead, they are possessed."
+			puts "Fire Fairie: #{self.name}..."
+			pause
+			puts "Fire Fairie: Until you freed me it felt like my voice was being quieted."
 			puts "A monster comes closer."
 			end
 			def storyline_six
-			puts "You are suddenly reminded of Dwarzengorf's warnings."
+			puts "Fire Fairie: Beware the Rankadon in these parts."
+			puts "Fire Fairie: The Rankadon is a creature of brawn."
 			pause
-			puts "Fire Fairie: Look out!"
-			puts "A monster comes closer."
-			end
-			def storyline_seven
-			puts "Rankadon: Rawwwwwwrrr!"
+			puts "Fire Fairie: It moves very quickly and is very strong."
+			puts "Fire Fairie: Oh no!"
 			pause
-			puts "#{self.name}: This is the monster Dwarzengorf warned me about!"
+			puts "#{self.name}: What's wrong?"
+			puts "Fire Fairie: My warning may have been too late."
+			puts "Fire Fairie: Look!"
 			pause
-			puts "Fire Fairie: The rock monster. I'm not sure how helpful I can be."
+			puts "The Rankadon blinks."
 			pause
-			puts "#{self.name}: It is moving fast!"
+			puts "#{self.name}: This is the monster you warned me about!"
+			pause
+			puts "Fire Fairie: Let's run now and we can go around the creature."
+			pause
+			puts "#{self.name}: It is moving too fast!"
 			pause
 			puts "The monster has two arms and a giant head with beady eyes."
 			puts "You think it strange this monster is here so close to your village."
 			pause
 			encounter_boss
 			end
-			def storyline_eight
-			puts "You hear Figaro."
-			puts "The disciple is communicating with you telepathically."
+			def storyline_seven
+			puts "#{self.name}: Was that monster possessed also?"
+			puts "Fire Fairie: It is hard to say the Rankadon has always been aggressive."
 			pause
+			puts "#{self.name}: When the creature you lived with was possessed did you understand anything about its possessor?"
+			puts "Fire Fairie: Understand... no."
+			puts "Fire Fairie: I felt something."
+			puts "Fire Fairie: Some kind of darkness unnatural to Arcania."
+			pause
+			puts "#{self.name}: We should travel to the other villages and see if they feel the same."
+			puts "Fire Fairie: I used to be able to communicate with the other fairies."
+			puts "Fire Fairie: I haven't been able to since the possession."
+			pause
+			puts "#{self.name}: Let's go."
+			puts "A monster comes closer."
+			end
+			def storyline_eight
 			puts "Figaro: #{self.name}... hear me."
 			puts "#{self.name}: I hear you Figaro."
 			pause
@@ -302,7 +321,6 @@ module Storyline
 			puts "Dwarzengorf: What came to our village was too powerful..."
 			puts "Dwarzengorf: I was following behind you watching over you as Figaro instructed."
 			pause
-			puts "...."
 			puts "Dwarzengorf: A young sorcerous confronted an ancient enemy."
 			puts "Dwarzengorf: An enemy as ancient as time."
 			puts "Dwarzengorf: The enemy drained the sorcerous of all her power."
@@ -398,7 +416,7 @@ module Storyline
 			puts "......."
 			pause
 			puts "........."
-			pause "Father: #{self.name} come downstairs."
+			puts "Father: #{self.name} come downstairs."
 			pause
 			puts "#{self.name}: Coming!"
 			pause

@@ -1,7 +1,7 @@
 	# status.rb defines the game's response to killing monsters as it pertains to location, title, storyline
 	
 		module Status
-		def location_check			#location_check determines the name of the location by the number of monsters killed
+			def location_check		#location_check determines the name of the location by the number of monsters killed
 				self.location = case self.monsters_killed
 				when (1...6)
 					"Urselan Forest"
@@ -9,47 +9,56 @@
 					"Urselan Bogs"
 				when (12...20)
 					"Urselan Outskirts"
-				when (21...30)
+				when (20...30)
 					"Darcanthus"
-				when (31...40)
+				when (30...40)
 					"Darcanthus Proper"
-				when (41...53)
+				when (40...53)
 					"Amortia"
-				when (54...66)
+				when (53...66)
 					"Amortia Ruins"
-				when (67...80)
+				when (66...80)
 					"Titania Path"
-				when 81
+				when 80
 					"Yelill Town"
-				when (82...97)
+				when (81...97)
 					"Abandoned Yelill Outposts"
-				when (98...120)
+				when (97...120)
 					"The Great Trail"
 				when (120...135)
 					"The Caverns"
-				when (136...150)
+				when (135...150)
 					"Red Rock Opening"
-				when (151...166)
+				when (150...166)
 					"Egal Ice Travene"
-				when 167
-					"Arcania"
-				when (168...182)
+				when (166...182)
 					"Ethereal Cross"
-				when (183...197)
+				when (182...197)
 					"Dawner Shade Blightsmite"
-				when (198...210)
+				when (197...210)
 					"Belly of the Beast"
-				when (211...226)
+				when (210...226)
 					"Arcania's Defeat"
-				when (227...243)
+				when (226...243)
 					"Arcania's Light"
 				when (243...266)
 					"Yaragon's Lair"
-				when 267
+				when 266
 					"The Final Battle"
 				else
 					self.location
 				end
+			end
+			def map_check			#determines which map to display (1 or 2) based on location_check method
+				which_map = case self.monsters_killed
+				when  (0...80)
+					map_one
+				when (80..266)
+					map_two
+				else
+					which_map
+				end
+				which_map
 			end
 			def role_check_warrior	#role_check_warrior determines the title of the character class (warrior) by the number of monsters killed
 				self.role = case self.current_level

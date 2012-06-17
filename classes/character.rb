@@ -1,8 +1,9 @@
-# character class defines the character, battle logic, and interfaces with data/data, status/status, and storyline/storyline to develop the game's plot
+# character class defines the player's attributes and battle sequences, and interfaces with data/data, status/status, and storyline/storyline to develop the game's plot
 
 
 class Character < Attributes
 	include Status
+	include Map
 	attr_accessor :name, :strength, :vitality, :magic, :calculated_damage, :current_vitality, :current_magic, :role, :role_flag, :role_message, :current_level, :experience, :gold, :current_adjective, :current_experience, :next_level_experience, :current_monster, :monsters_killed, :monsters_killed_location_flag, :current_gold, :level_up_flag, :belt, :gender, :potions, :points, :current_choice, :current_answer, :current_spell, :spell_flag
 
 		def initialize(name, calculated_damage, current_vitality, current_magic, role, role_flag, role_message, current_level, experience, gold, current_adjective, current_experience, next_level_experience, current_monster, monsters_killed, monsters_killed_location_flag, current_gold, level_up_flag, belt, gender, potions, points, current_choice, current_answer, current_spell, spell_flag)
@@ -302,14 +303,14 @@ class Character < Attributes
 
 		def buy_potion?
 			answer = gets
-			if self.gold >= 300
+			if self.current_gold >= 300
 				if (answer.strip.upcase == "Y" || answer.strip.upcase == "YES")
 					self.potions+=1
-					self.gold-=300
+					self.current_gold-=300
 					puts "\e[1;31mYou received a potion!\e[0m"
 				elsif (answer.strip.upcase == "N" || answer.strip.upcase == "NO")
 					self.potions
-					self.gold
+					self.current_gold
 				else
 					puts "Elderly trader: Buy potion?"
 					buy_potion?
@@ -370,10 +371,13 @@ class Character < Attributes
 				list_attributes
 				attribute_points_choice?
 			else
+				puts "Your current attributes:"
 				puts "Strength: #{self.strength}"
 				puts "Vitality: #{self.vitality}"
 				puts "Magic: #{self.magic}"
-				puts "Earn more attribute points by leveling up."
+				puts "You can earn more attribute points by leveling up."
+				pause
+				stats
 				choice_next?
 			end
 		end
@@ -421,9 +425,9 @@ class Character < Attributes
 		end
 
 		def show_map
-			puts "You are looking at the map."
-			pause
-			battle
+			map_check
+			stats
+			choice_next?
 		end
 
 		def get_level_up_points
@@ -467,8 +471,7 @@ class Character < Attributes
 			encounter_monster
 		end
 
-		def assign_role
-			pause
+		def assign_role_and_name
 			clear_screen
 			super
 		end
