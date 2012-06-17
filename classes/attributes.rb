@@ -176,16 +176,15 @@ ___________.........--'        `.   ,'       `--..___....-'     ,
 			pause
 		else
 			clear_screen
-			assign_role
+			assign_role_and_name
 		end
 		clear_screen
 		print "What would you like your character's name to be? "
 		self.name = gets.chomp.to_s
-		if self.name == "" || self.name == " "
+		while self.name.strip == ""
 			clear_screen
-			assign_name
-		else
-			self.name
+			print "What would you like your character's name to be? "
+			self.name = gets.chomp.to_s
 		end
 		clear_screen
 		print get_name + " stands at the town of Urselan's gates and peers into the dimly lit forest. The air is dry and musk."
